@@ -1,38 +1,29 @@
 package com.venkatalaxmi.org.VenkataLaxmiApi.entity;
 
-import com.sun.istack.NotNull;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
 public class Product {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    @NotNull
-    @Column(name = "product_name")
+    @Column(name = "product_name", nullable = false)
     String name;
 
-    @NotNull
-    @Column(name = "product_quality")
+    @Column(name = "product_quality", nullable = false)
     String quality;
 
-    @NotNull
-    @Column(name = "product_type")
+    @Column(name = "product_type", nullable = false)
     String type;
 
-    @NotNull
-    @Column(name = "product_mfg_date")
+    @Column(name = "product_mfg_date", nullable = false)
     String mfgDate;
 
-    @NotNull
-    @Column(name = "product_expr_date")
+    @Column(name = "product_expr_date", nullable = false)
     String exprDate;
 }
